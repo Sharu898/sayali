@@ -1,0 +1,18 @@
+ function showAlert(){
+    alert('hello! the button is cliked,this script class')
+}
+function changetext(){
+    Document.getElementById('text').innerHTML ="text changed";
+ 
+}
+function handleClick() {
+    Document.getElementById('clickMessage').innerHTML = 'Button cliked!';
+}
+function validateForm(){
+    let name = Document.getElementById('name').value;
+    if(name == ''){
+        alert('please enter your name.');
+        return false;
+    }
+    return true;
+}
