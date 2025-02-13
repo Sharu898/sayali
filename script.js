@@ -1,50 +1,39 @@
-//ToDo App
-
-document.addEventListener("ToDos",init)
-
-function init(){
-    loadTasks()
+      /*   script.js   */
+function showAlert(){
+    alert('Hello! This is a javaScript alert')
 }
-
-function loadTasks(){
-      const tasks = JSON.parse(localStorage.getItem("tasks"))||[];
-      tasks.forEach(task => addTaskToDOM(task));
+function changeText(){
+    document.getElementById('text').innerHTML = 'Text changed!';
+ 
 }
-
-
-function addTask(){
-    const taskInput = document.getElementById("taskInput");
-    const task = taskInput.value.trim();
-    if(task == "") return;
-
-    addTaskToDOM(task);
-    saveTask(task);
-    taskInput.value="";
+function handleClick() {
+    document.getElementById('clickMessage').innerHTML = 'Button Clicked!';
 }
-
-function addTaskToDOM(task){
-    const taskList = document.getElementById("taskList");
-    const li = document.createElement("li");
-        li.innerHTML = `${task} <button class= "remove-btn">Remove</button>`
-        taskList.appendChild(li);
-
-
-        li.querySelector(".remove-btn").addEventListener("click",function(){
-            removeTask(task,li);
-        })
+function validateForm(){
+    let name = document.getElementById('name').value;
+    if(name == ''){
+        alert('please enter your name.');
+        return false;
     }
+    return true;
+}
+function checkNumber(){
+    let num = parseInt(document.getElementById('numberInput').value);
+    let result = num > 10 ?'Greater than 10':'10 or less';
+    document.getElementById('numberResult').innerHTML = result; 
+}
+function checkAge(){
+    let age = parseInt(document.getElementById('ageInput').value);
+    if(age >= 18){
+        document.getElementById('ageResult').innerHTML = 'You are an adult';
 
-    function saveTask(task){
-        const tasks = JSON.parse(localStorage.getItem("tasks"))||[];
-        tasks.push(task);
-        localStorage.setItem("tasks",JSON.stringify(tasks));
+    }else{
+        document.getElementById('ageResult').innerHTML = 'You are a minor';
     }
-
-
-     function removeTask(task,element){
-        let tasks = JSON.parse(localStorage.getItem("tasks"));
-        tasks = tasks.filter(t => t!==task);
-        localStorage.setItem("tasks",JSON.stringify(tasks));
-        element.remove();
-
-   }
+}
+function displayArrayItem(){
+    let items = ['Apple','Banana','Cherry','Date','Elderberry'];
+    let index = parseInt(document.getElementById('arrayIndex').value);
+    let result = items[index]||'Invalid index';
+    document.getElementById('arrayResult').innerHTML = result;
+}
