@@ -1,34 +1,61 @@
-*{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+header{
+    display:flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+}
+.logo{
     font-size: 20px;
 }
-#list{
-    color:brown;
+.logo img{
+    height: 300px;
+    width: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
-.list{
-    color: aqua;
-}
-.ul1{
-    background-color: blueviolet;
-    color: aquamarine;
-    width: 25%;
-    padding: 20px;
+nav{
     margin: 20px;
-    border: 5px solid goldenrod;
-    border-radius: 10px;
-    transition: 0.5 ease-in-out;
+    padding: 10px;
+}
+nav a{
+    margin-right: 20px;
+    font-size: 20px;
+}
+.img img{
+    width: 125%;
+    height: 420px;
+}
+.container{
+    display: flex;
+    background-color:gray
+}
+.img_container{
+    display:grid;
+    gap: 10px;
+    grid-template-columns: repeat(2,13%);
+}
+.cc{
+    margin: 30px;
+    background-color: blanchedalmond;
+}
+.row1{
+display:flex;
+margin: 1%;
+}
+.product{
+    text-align: center;
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 5px;
+    
+    border-radius: 4px;
+}
+.product img{
+    height: 150px;
+    width: 100px;
+}
+.product button{
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 15px;
+}
 
-
-}
-.ul1:hover{
-    background-color: palevioletred;
-    border: 2px solid orchid;
-
-}
-.ul1 ol li{
-    font-size: 30px;
-    font-weight: 700;
-}
-table.th,td{
-    border:1px solid black ;
-}
